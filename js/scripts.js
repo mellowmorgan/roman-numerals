@@ -2,8 +2,10 @@ const I="I"; //1
 const V="V"; //5
 const X="X"; //10
 const L="L"; //50
+const XL ="XL"; //40
 const C="C"; //100
 const D="D"; //500
+const CD = "CD" //400;
 const M="M"; //1000
 const CM = "CM" //900
 const IV="IV"; //4
@@ -26,13 +28,25 @@ function translator(number){
       romanString+=D;
       number=number-500;
     }
+    else if (number-400>=0){
+      romanString+=CD;
+      number=number-400;
+    }
     else if (number-100>=0){
       romanString+=C;
       number=number-100;
     }
+    else if (number-90>=0){
+      romanString+=XC;
+      number=number-90;
+    }
     else if (number-50>=0){
       romanString+=L;
       number=number-50;
+    }
+    else if (number-40>=0){
+      romanString+=XL;
+      number=number-40;
     }
     else if (number-10>=0){
       romanString+=X;
@@ -63,7 +77,7 @@ function translator(number){
 $(document).ready(function(){
   $("form#translator").submit(function(event){
     event.preventDefault();
-    const input = $("#text-passage").val();
-    $("#pig-latin").html(passageTranslator(input));
+    const input = parseInt($("#text").val());
+    $("#roman").html(translator(input));
   });
 });
