@@ -5,6 +5,7 @@ const L="L"; //50
 const C="C"; //100
 const D="D"; //500
 const M="M"; //1000
+const CM = "CM" //900
 const IV="IV"; //4
 const IX="IX"; //9
 const XC = "XC"; //90
@@ -17,6 +18,10 @@ function translator(number){
       romanString+=M;
       number=number-1000;
     }
+    else if(number-900>=0){
+      romanString+=CM; 
+      number=number-900;
+     }
     else if (number-500>=0){
       romanString+=D;
       number=number-500;
@@ -50,7 +55,7 @@ function translator(number){
     romanString+=I;
     number--;
     }
-  
+
   }
   return romanString;
 }
