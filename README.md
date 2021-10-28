@@ -6,11 +6,17 @@ const number = 9;
 translator(number);
 Expected Output: IX
 
-<!-- Test: "It should return a roman numeral for an integer over ten."
+Test: "It should return a roman numeral for an integer under ten that doesn't have single roman numeral output."
 Code:
-const number = 19;
+const number = 3;
 translator(number);
-Expected Output: XIX -->
+Expected Output: "III";
+
+Test: "It should return a roman numeral for an integer over ten that doesn't have single roman numeral literal."
+Code:
+const number = 13;
+translator(number);
+Expected Output: "XIII";
 
 # _{Application Name}_
 

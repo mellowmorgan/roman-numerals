@@ -1,75 +1,30 @@
-// function vowelChecker(letter){
-//   const array =  ['a','e','i','o','u'];
-//   for(let i=0;i<5;i++){
-//     if(letter===array[i]){
-//       return true;
-//     }
-//   }
-//   return false;
-// }
-
-function stripPuctuation(string)
-{ 
-  
-  string = string.replace(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/g, "");
-  return string;
-}
-
-function passageTranslator(passage){
-  passage = stripPuctuation(passage);
-  arrayPassage = passage.split(" ");
-
-  let newWord;
-  let translatedArray=[];
-  arrayPassage.forEach(function(word){
-    newWord = wordTranslator(word);
-    translatedArray.push(newWord);
-  });
-  const pigLatinPassage = translatedArray.join(" ");
-  return pigLatinPassage;
-}
+const I="I"; //1
+const V="V"; //5
+const X="X"; //10
+const L="L"; //50
+const C="C"; //100
+const D="D"; //500
+const M="M"; //1000
+const IV="IV"; //4
+const IX="IX"; //9
+const XC = "XC"; //90
 
 
-
-function wordTranslator(word){
-  word=word.toLowerCase();
-  //if its got nonalphabetical characters return 0
-  // if(word.match(/\d+/g)){return 0;}
-  if(/[^a-z]/.test(word)){return 0;}
-
-  const vowelSuffix = "way";
-  let consonantSuffix = "ay";
-  let newWord;
-  let letter = "";
-
-  if(/[aieou]/.test(word.charAt(0))){
-    newWord = word.concat(vowelSuffix);
-    return newWord;
-  } else{
-      for(let i = 0; i < word.length; i++) {
-      letter += word.charAt(i);
-      if((/[aeiou]/.test(word.charAt(i+1)))&&(!(word.charAt(0)==='q'))){
-        consonantSuffix=letter+consonantSuffix;
-        word=word.slice(i+1,word.length);
-        newWord=word.concat(consonantSuffix);
-        return newWord;
-        
-      }
-      else if((word.charAt(0)==='q') && (word.charAt(i+1)==='u')){
-        consonantSuffix="qu"+consonantSuffix;
-        word=word.slice(i+2,word.length);
-        newWord=word.concat(consonantSuffix);
-        return newWord;
-      }
-
+function translator(number){
+  let romanString = "";
+  while(number>0){
+    if (number-9===0){
+      romanString+=IX;
+      number=number-9;
     }
-  } 
-
-}
+    else if (number-1>=0){
+    romanString+=I;
+    number--;
+    }
   
-
-
-
+  }
+  return romanString;
+}
 
 $(document).ready(function(){
   $("form#translator").submit(function(event){
