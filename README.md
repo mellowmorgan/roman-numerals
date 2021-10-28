@@ -43,9 +43,9 @@ Webpage converts integers to roman numerals from input, displays below.
 ## Setup/Installation Requirements
 
 * Create and/or navigate to the directory you would like to contain this project on your computer.
-* Initialize a git repository by typing **git init** in the terminal.
-* Type **git clone https://github.com/Frank-Proulx/insert_name_here** to clone the repository to your local machine.
-* Open the file "index.html" in the newly created "portfolio-landing" folder using either the GUI in your finder window, or typing **cd insert_name_here** and pressing return to navigate into the project folder, and then typing **open index.html** in the terminal from within the portfolio-landing folder.  
+* git clone address in terminal
+* cd into folder created
+* Open the file "index.html"   
 
 ## Known Bugs
 
