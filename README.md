@@ -18,6 +18,12 @@ const number = 13;
 translator(number);
 Expected Output: "XIII";
 
+Test: "It should return a roman numeral for an integer over 900 that doesn't have single roman numeral literal."
+Code:
+const number = 969;
+translator(number);
+Expected Output: "CMLXIX";
+
 # _{Application Name}_
 
 #### By _**{List of contributors}**_
